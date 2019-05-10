@@ -1,21 +1,34 @@
 import React, {Component} from 'react';
-import {TouchableOpacity, StyleSheet, ImageBackground, Text, View} from 'react-native';
+import {createStackNavigator} from 'react-navigation';
+import {TouchableOpacity, StyleSheet, ImageBackground, Text, View,Button} from 'react-native';
+import Login from './Login';
+import Register from './Register';
+import navStyles from './styles/navStyles';
+const bgimage = require('../Image/homeimage.jpg');
 
-
-const bgimage = require('./Image/homeimage.jpg');
-
-export default class App extends Component<Props> {
+class App extends Component {
+  static navigationOptions = {
+    header:null,
+    ...navStyles
+  };
+  goToLogin = () => {
+  this.props.navigation.navigate('Login')
+  }
+  goToRegsiter = () => {
+    this.props.navigation.navigate('Register')
+  }
   render() {
+
     return (
         <ImageBackground source={(bgimage)} style={{width: '100%',height:'100%'}}>
           <View style={styles.container}>
             <Text style={styles.welcome}>Salary system</Text>
             <Text style={styles.greeting}>Track, Progess, Improve.</Text>
             <View style={styles.buttonBox}>
-              <TouchableOpacity>
-                <Text style={styles.button}>Login</Text>
+              <TouchableOpacity onPress={this.goToLogin}>
+               <Text style={styles.button}>Login</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={this.goToRegsiter}>
                 <Text style={styles.button}>Register</Text>
               </TouchableOpacity>
             </View>
@@ -35,7 +48,6 @@ export default class App extends Component<Props> {
 
   },
   buttonBox: {
-
     color:'white',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -66,3 +78,15 @@ export default class App extends Component<Props> {
     backgroundColor: 'white',
   },
 });
+
+export default createStackNavigator({
+  Home: {
+    screen:App
+  },
+  Login: {
+    screen:Login
+  },
+  Register: {
+    screen:Register
+  }
+})
