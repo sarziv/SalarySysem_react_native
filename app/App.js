@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {createStackNavigator} from 'react-navigation';
 import {TouchableOpacity, StyleSheet, ImageBackground, Text, View,Button} from 'react-native';
-import Login from './Login';
-import Register from './Register';
+import LoginUser from './LoginUser';
+import RegisterUser from './RegisterUser';
 import navStyles from './styles/navStyles';
+
 const bgimage = require('../Image/homeimage.jpg');
 
 class App extends Component {
@@ -12,10 +13,10 @@ class App extends Component {
     ...navStyles
   };
   goToLogin = () => {
-  this.props.navigation.navigate('Login')
+  this.props.navigation.navigate('LoginUser')
   }
   goToRegsiter = () => {
-    this.props.navigation.navigate('Register')
+    this.props.navigation.navigate('RegisterUser')
   }
   render() {
 
@@ -37,7 +38,7 @@ class App extends Component {
 
     );
   }
-}
+};
 
   const styles = StyleSheet.create({
   container: {
@@ -83,10 +84,10 @@ export default createStackNavigator({
   Home: {
     screen:App
   },
-  Login: {
-    screen:Login
+  LoginUser: {
+    screen:LoginUser
   },
-  Register: {
-    screen:Register
-  }
-})
+  RegisterUser: {
+    screen:RegisterUser
+  },
+});

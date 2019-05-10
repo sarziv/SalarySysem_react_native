@@ -6,7 +6,4 @@ export default {
     headerTitleStyle:{
         color:"black"
     },
-    headerButton: {
-        color: 'white'
-    }
 }
