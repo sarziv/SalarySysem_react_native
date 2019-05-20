@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import navStyles from './styles/navStyles';
-import {StyleSheet, Text, View,TextInput,TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, TextInput, TouchableOpacity} from 'react-native';
 
 class RegisterUser extends Component {
-    static navigationOptions ={
+    static navigationOptions = {
         ...navStyles
     };
 
@@ -14,11 +14,16 @@ class RegisterUser extends Component {
                 <Text style={styles.createUser}>Create a new user</Text>
                 <TextInput
                     style={styles.inputStyle}
-                placeholder={'Email'}
+                    placeholder={'Email'}
+                    autofocus={'true'}
+                    autocorrect={'false'}
+
                 />
                 <TextInput
                     style={styles.inputStyle}
                     placeholder={'Password'}
+                    autofocus={'true'}
+                    autocorrect={'false'}
                 />
                 <TouchableOpacity>
                     <Text style={styles.createUserButton}>Create</Text>
@@ -30,35 +35,35 @@ class RegisterUser extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop:'20%',
+        marginTop: '20%',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
     },
-    inputStyle:{
+    inputStyle: {
         fontFamily: 'ShareTechMono-Regular',
         textAlign: 'center',
-        fontSize:20,
-        width:'60%',
-        height:60,
-        borderBottomWidth:1,
-        borderColor:'black',
-        marginBottom:4,
+        fontSize: 20,
+        width: '60%',
+        height: 60,
+        borderBottomWidth: 1,
+        borderColor: 'black',
+        marginBottom: 4,
     },
     createUser: {
-        marginBottom:15,
-        color:'black',
+        marginBottom: 15,
+        color: 'black',
         fontFamily: 'ShareTechMono-Regular',
         fontSize: 30,
     },
     createUserButton: {
-        marginTop:20,
-        color:'white',
-        fontWeight:'bold',
-        borderRadius:20,
-        marginRight:5,
+        marginTop: 20,
+        color: 'white',
+        fontWeight: 'bold',
+        borderRadius: 20,
+        marginRight: 5,
         fontFamily: 'ShareTechMono-Regular',
-        paddingTop:8,
+        paddingTop: 8,
         height: 40,
         width: 100,
         textAlign: 'center',
